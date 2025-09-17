@@ -1,0 +1,8 @@
+2025-09-16 10:15:23 INFO  Server started
+2025-09-16 10:15:24 WARNING Disk usage at 80%
+2025-09-16 10:15:25 ERROR  Connection failed
+2025-09-16 10:15:26 INFO  Retrying connection
+2025-09-16 10:15:27 ERROR  Timeout reached
+2025-09-16 10:15:28 INFO  Connection successful
+2025-09-16 10:15:29 WARNING Memory usage high
+2025-09-16 10:15:30 ERROR  Database unavailable
