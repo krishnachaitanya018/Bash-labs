@@ -1,0 +1,27 @@
+name: Build Runner Workflow
+
+on:
+  workflow_call:
+    inputs:
+      build_env:
+        description: 'Environment to build (dev, prod)'
+        required: true
+        type: string
+        default: 'dev'
+
+jobs:
+  run-program:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run Python Script
+        run: |
+          echo "Running Python in ${{ inputs.build_env }} environment"
+          python python/app.py

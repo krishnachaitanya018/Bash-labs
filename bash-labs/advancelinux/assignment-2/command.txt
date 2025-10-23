@@ -1,0 +1,5 @@
+sed -i '.bak' 's/foo/bar/g' *
+
+sed -i '' 's/one/ONE/g' file1.txt
+
+On BSD systems like macOS, you need to provide a backup extension like -i '.bak' or else "risk corruption or partial content" per the manpage.

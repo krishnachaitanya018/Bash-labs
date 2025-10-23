@@ -1,0 +1,11 @@
+name: Main Caller Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  call-other-workflow:
+    uses: ./.github/workflows/build-runner.yml
+    with:
+      build_env: "dev"

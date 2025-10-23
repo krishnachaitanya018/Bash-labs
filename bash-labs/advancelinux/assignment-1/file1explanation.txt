@@ -1,0 +1,36 @@
+awk '{out = out $NF ";"} END {sub(/;$/, "", out); print out}' lines.txt
+awk '{out = out $NF ";"} ...'
+
+1.For each line in lines.txt, AWK executes this block.
+
+$NF → "last field" on the line (One, Two, …, Ten).
+
+out = out $NF ";" → appends the last field + ; to a variable out.
+
+
+2. END {sub(/;$/, "", out); print out}
+
+END { ... } → runs only after all lines are processed.
+
+sub(/;$/, "", out) → removes the last ; at the end of out.
+
+; → matches a semicolon
+
+$ → end of string
+
+So /;$/ = "semicolon at the end".
+
+print out → finally prints the string without the trailing ;.
+
+
+
+
+awk '{printf "%s%s", (NR==1?"": ";"), $0} END{print ""}' file1.txt
+
+NR==1?"": ";" → if it’s the first line, don’t print a semicolon; otherwise, print one before the next line.
+
+$0 → prints the entire line.
+
+printf → used instead of print, so no automatic newline is added.
+
+END{print ""} → after finishing all lines, adds a newline so your shell prompt isn’t stuck to the output
